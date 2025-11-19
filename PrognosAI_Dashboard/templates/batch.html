@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Batch Results</title><link rel="stylesheet" href="/static/styles.css"></head>
+<body>
+  <div class="container">
+    <h1>Batch Results — {{ filename }}</h1>
+    <table>
+      <tr><th>ID</th><th>RUL</th><th>Status</th><th>Error</th></tr>
+      {% for r in results %}
+      <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.rul if r.rul is defined else '-' }}</td>
+        <td>{{ r.status if r.status is defined else '-' }}</td>
+        <td>{{ r.error if r.error is defined else '-' }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/">Back</a>
+  </div>
+</body>
+</html>

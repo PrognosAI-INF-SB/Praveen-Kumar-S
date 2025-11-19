@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PrognosAI Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>PrognosAI — Predictive Maintenance Dashboard</h1>
+    <p>Upload single engine CSV for prediction</p>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".csv" required>
+      <button type="submit">Predict RUL</button>
+    </form>
+
+    <hr/>
+    <h3>Batch Prediction</h3>
+    <p>Upload a CSV containing multiple engines (must include unit_number or group identifier)</p>
+    <form action="/batch_predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".csv" required>
+      <button type="submit">Batch Predict</button>
+    </form>
+  </div>
+</body>
+</html>
